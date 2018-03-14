@@ -282,7 +282,7 @@ plugins: [
       resolve: 'gatsby-source-google-sheets',
       options: {
           spreadsheetId: '1J9tJQNVYoN64QbZjOMwpSmA62GWOehcUpgVeTDv6jNA',
-          worksheetTitle: 'Sheet1',
+          worksheetTitle: 'mystery',
           credentials: require("./InnoD\ Mystery-975d82e0c439.json")
       }
   }
