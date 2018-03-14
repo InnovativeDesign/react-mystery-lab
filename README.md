@@ -296,7 +296,7 @@ On the left is a box for typing in queries and getting responses back. Try writi
 
 ```jsx
 {
-  googleSheetSheet1Row {
+  googleSheetMysteryRow {
     name
     email
     message
