@@ -224,6 +224,7 @@ We will use another event handler to respond to the `onsubmit` event of our `<fo
 class ... {
   
   onSubmit(event) {
+    event.preventDefault();
     fetch('https://untitled-7u6istdb7h9e.runkit.sh/', {
       method: 'POST',
       headers: {
@@ -231,9 +232,10 @@ class ... {
       },
       body: JSON.stringify(this.state)
     })
-    .then(response => response.json())
-    .then((response) => {
+    .then(response => {
       if (!response.ok) throw new Error(response);
+      return response.json());
+    .then((response) => {
       console.log(response);
       alert('Sent successfully!');
     })
@@ -248,8 +250,9 @@ export ...
 
 This is a lot of new code. Let's break down what we've done here:
 
-- We've created a method inside of the `ContactForm` component called `onSubmit`. We intend it to be an event handler (for the `onsubmit` event), so we have it take an event object in parameters (although we don't use it).
-- In this method, we use `fetch` to send an external `POST` request to some endpoint (I defined the behavior of this endpoint beforehand).
+- We've created a method inside of the `ContactForm` component called `onSubmit`. We intend it to be an event handler (for the `onsubmit` event), so we have it take an event object in parameters.
+- We call `event.preventDefault()` to change the default behavior of what `onsubmit` causes. Try removing this line. What happens?
+- In the method we define, we use `fetch` to send an external `POST` request to some endpoint (I defined the behavior of this endpoint beforehand).
 - Within this request, we send a String representation of `this.state` (_what is in `this.state`_? Your form contents!)
 - If the request succeeds, we parse the response as a JavaScript object with `response.json()` and then we log this object to the console and show an alert dialog to the user (saying "Sent successfully!").
 - If the request fails, we also log the failure response to the console.
