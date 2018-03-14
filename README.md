@@ -12,8 +12,6 @@ After that, use `gatsby develop` to start serving your project from a developmen
 
 ## Task 1: A React refresher
 
-:checkered_flag: **Finish**: Send a pull request to this repository and wait for the tests to complete to receive the key for the next task.
-
 ### Building Components :hammer: 
 
 The first exercise for this task will be a walkthrough for building a React component, as a review of the last couple weeks' React content. Then, I'll provide you a high-level specification for what other components need to be built, and you will build them!
@@ -256,7 +254,9 @@ This is a lot of new code. Let's break down what we've done here:
 - If the request succeeds, we parse the response as a JavaScript object with `response.json()` and then we log this object to the console and show an alert dialog to the user (saying "Sent successfully!").
 - If the request fails, we also log the failure response to the console.
 
-**Make sure that your request works!** You should be able to fill out a form, submit it, and see the response log successfully to the console. The response should be a mystery.
+The next step is to call your `onSubmit` function in the `onSubmit` prop of your `<form>` element. Take a look at how we did that with `<input>`s and `onChange` if you're stuck. 
+
+**Finally, make sure that your request works!** You should be able to fill out a form, submit it, and see the response log successfully to the console. The response should be a mystery.
 
 :mag: **Before you finish,** follow the mystery!
 **_This is required to complete the rest of this lab._**
